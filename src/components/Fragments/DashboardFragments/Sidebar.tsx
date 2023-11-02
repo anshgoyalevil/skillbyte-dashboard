@@ -131,7 +131,7 @@ const adminRoutes = [
     label: "Manage Services",
     icon: IconServer,
   },
-  { link: "/dashboard/addservice", label: "Add Service", icon: IconCoin },
+  { link: "/dashboard/add-internship", label: "Add Internship", icon: IconCoin },
 ];
 
 const moderatorRoutes = [

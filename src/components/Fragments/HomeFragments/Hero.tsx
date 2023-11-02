@@ -74,10 +74,10 @@ import {
           <div className={classes.inner}>
             <div className={classes.content}>
               <Title className={classes.title}>
-                An <span className={classes.highlight}>All-in-one</span> Dashboard
+                An <span className={classes.highlight}>All-in-one</span> App
               </Title>
               <Text color="dimmed" mt="md">
-              CodifyPlus Dashboard offers the integrated experience to manage your clients on-the-fly. Anytime, any device, anywhere, in a matter of few clicks.
+              SkillByte offers an all rounder experience for the college students to keep track on off-campus internship drives, open-source programs, and many more.
               </Text>
   
               <List
@@ -91,10 +91,10 @@ import {
                 }
               >
                 <List.Item>
-                  <b>Track Services</b> - Track your services on the go using our web or mobile app.
+                  <b>Internships</b> - Keep an eye on off-campus internship opportunities.
                 </List.Item>
                 <List.Item>
-                  <b>Raise Tickets</b> - Raise any ticket or query via the dashboard and get them resolved quickly.
+                  <b>Open Source</b> - Check all the open-source programs currently open.
                 </List.Item>
                 <List.Item>
                   <b>...A lot more</b>

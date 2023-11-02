@@ -1,6 +1,6 @@
 import React from "react";
-import DarkGIF from "./DarkGIF.gif";
-import LightGIF from "./LightGIF.gif";
+import DarkGIF from "./2.png";
+import LightGIF from "./1.png";
 import { useMantineTheme } from "@mantine/core";
 
 function Logo() {

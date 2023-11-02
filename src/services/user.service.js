@@ -2,6 +2,22 @@ import axios from "axios";
 import authHeader from "./auth-header";
 import { API_URL } from "../common/Constants";
 
+const addInternship = (newInternshipData) => {
+  return axios.post(API_URL + "addInternship", newInternshipData, { headers: authHeader() })
+}
+
+const getAllBatches = () => {
+  return axios.get(API_URL + "getAllBatches", { headers: authHeader() })
+}
+
+const userService = {
+  addInternship,
+  getAllBatches,
+};
+
+export default userService
+
+/*
 const getUserStats = () => {
   return axios.get(API_URL + "getUserStats", { headers: authHeader() })
 }
@@ -148,3 +164,4 @@ const userService = {
 };
 
 export default userService
+*/

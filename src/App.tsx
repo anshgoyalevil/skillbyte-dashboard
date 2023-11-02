@@ -27,7 +27,7 @@ import ServiceStatus from "./components/Screens/ServiceStatus";
 import { AllUsers } from "./components/Screens/AdminScreens/AllUsers";
 import { AddUser } from "./components/Screens/AdminScreens/AddUser";
 import { ManageServices } from "./components/Screens/AdminScreens/ManageServices";
-import AddService from "./components/Screens/AdminScreens/AddService";
+import AddInternship from "./components/Screens/AdminScreens/AddInternship";
 import { TrackService } from "./components/Screens/AdminScreens/TrackService";
 import { ChangePassword } from "./components/Screens/ChangePassword";
 import { ManageServicesMod } from "./components/Screens/ModeratorScreens/ManageServicesMod";
@@ -87,7 +87,7 @@ export default function App() {
             <Route path="allusers" element={<AllUsers />}></Route>
             <Route path="adduser" element={<AddUser />}></Route>
             <Route path="manageservices" element={<ManageServices />}></Route>
-            <Route path="addservice" element={<AddService />}></Route>
+            <Route path="add-internship" element={<AddInternship />}></Route>
             <Route path="track" element={<TrackService />}>
               <Route path="*" element={<TrackService />} />
             </Route>

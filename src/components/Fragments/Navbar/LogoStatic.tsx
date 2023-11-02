@@ -1,6 +1,6 @@
 import React from "react";
-import DarkPNG from "./CodifyPlusLogoDarkMode.png";
-import LightPNG from "./CodifyPlusLogoLightMode.png";
+import DarkPNG from "./2.png";
+import LightPNG from "./1.png";
 import { useMantineTheme } from "@mantine/core";
 
 function LogoStatic() {

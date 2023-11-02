@@ -133,14 +133,14 @@ export function Footer({ data }: FooterLinksProps) {
         <div className={classes.logo}>
           <LogoStatic/>
           <Text size="xs" color="dimmed" className={classes.description}>
-            Business Accelerator and Toolkit
+            Career Accelerator Application
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          © 2023 CodifyPlus.com | All rights reserved.
+          © 2023 SkillByte | All rights reserved.
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>

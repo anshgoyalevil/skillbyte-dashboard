@@ -97,7 +97,7 @@ export function Register() {
               fontWeight: 900,
             })}
           >
-            Welcome to CodifyPlus CRM!
+            Welcome to SkillByte!
           </Title>
           <Text color="dimmed" size="sm" align="center" mt={5}>
             Already have an account?{" "}

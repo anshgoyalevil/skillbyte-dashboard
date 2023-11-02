@@ -18,7 +18,7 @@ import {
             component={Link}
             m={5}
             ml={0}
-            to={`/dashboard/addservice/`}
+            to={`/dashboard/add-internship/`}
             variant="outline"
             color="yellow"
             onClick={() => window.location.reload()}
