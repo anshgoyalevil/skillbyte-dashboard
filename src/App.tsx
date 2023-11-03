@@ -32,6 +32,7 @@ import { TrackService } from "./components/Screens/AdminScreens/TrackService";
 import { ChangePassword } from "./components/Screens/ChangePassword";
 import { ManageServicesMod } from "./components/Screens/ModeratorScreens/ManageServicesMod";
 import { TrackServiceMod } from "./components/Screens/ModeratorScreens/TrackServiceMod";
+import { AddBatch } from "./components/Screens/AdminScreens/AddBatch";
 
 export default function App() {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -86,6 +87,7 @@ export default function App() {
             </Route>
             <Route path="allusers" element={<AllUsers />}></Route>
             <Route path="adduser" element={<AddUser />}></Route>
+            <Route path="addbatch" element={<AddBatch />}></Route>
             <Route path="manageservices" element={<ManageServices />}></Route>
             <Route path="add-internship" element={<AddInternship />}></Route>
             <Route path="track" element={<TrackService />}>

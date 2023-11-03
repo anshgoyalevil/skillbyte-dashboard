@@ -10,9 +10,49 @@ const getAllBatches = () => {
   return axios.get(API_URL + "getAllBatches", { headers: authHeader() })
 }
 
+const getAllUsers = () => {
+  return axios.get(API_URL + "getAllUsers", { headers: authHeader() })
+}
+
+const changeUserRole = (newRoleAndId) => {
+  return axios.post(API_URL + "changeUserRole", newRoleAndId, { headers: authHeader() })
+}
+
+const addNewUser = (newUserData) => {
+  return axios.post(API_URL + "addNewUser", newUserData, { headers: authHeader() })
+}
+
+const deleteUser = (userId) => {
+  return axios.post(API_URL + "deleteUser", userId, { headers: authHeader() })
+}
+
+const getUserStats = () => {
+  return axios.get(API_URL + "getUserStats", { headers: authHeader() })
+}
+
+const updateProfile = (updatedProfileData) => {
+  return axios.post(API_URL + "updateProfile", updatedProfileData, { headers: authHeader() })
+}
+
+const changePassword = (updatedPasswordData) => {
+  return axios.post(API_URL + "changePassword", updatedPasswordData, { headers: authHeader() })
+}
+
+const addNewBatch = (newBatchData) => {
+  return axios.post(API_URL + "addNewBatch", newBatchData, { headers: authHeader() })
+}
+
 const userService = {
   addInternship,
   getAllBatches,
+  getAllUsers,
+  changeUserRole,
+  addNewUser,
+  deleteUser,
+  getUserStats,
+  updateProfile,
+  changePassword,
+  addNewBatch,
 };
 
 export default userService

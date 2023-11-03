@@ -19,6 +19,7 @@ import {
   IconUserBolt,
   IconKey,
   IconHomeBolt,
+  IconNote,
 } from "@tabler/icons-react";
 import { useSelector } from "react-redux";
 import { UserInfoSidebar } from "./UserInfoSidebar";
@@ -126,6 +127,7 @@ const data = [
 const adminRoutes = [
   { link: "/dashboard/allusers", label: "Manage Users", icon: IconUsers },
   { link: "/dashboard/adduser", label: "Add User", icon: IconUser },
+  { link: "/dashboard/addbatch", label: "Add Batch", icon: IconNote },
   {
     link: "/dashboard/manageservices",
     label: "Manage Services",

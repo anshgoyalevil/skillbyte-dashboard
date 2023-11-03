@@ -9,23 +9,17 @@ import {
   Button,
   Loader,
   Center,
-  Modal,
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 import UserService from "../../../services/user.service";
 import moment from "moment";
 import { notifications } from "@mantine/notifications";
 import {
-  IconMessages,
-  IconProgressCheck,
-  IconServer,
   IconSettingsBolt,
   IconTrash,
 } from "@tabler/icons-react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { SendNotificationFragment } from "../../Fragments/AllUsersFragments/SendNotificationFragment";
-import { useDisclosure } from "@mantine/hooks";
 
 const rolesData = ["USER", "MODERATOR", "ADMIN"];
 
@@ -46,7 +40,6 @@ export function AllUsers() {
     {
       username: "",
       email: "",
-      processServices: [],
       _id: "",
       role: "",
       createdAt: "",
@@ -54,12 +47,6 @@ export function AllUsers() {
   ]);
 
   const [stateUpdate, setStateUpdate] = useState(false);
-  const [notificationUsername, setNotificationUsername] = useState("");
-
-  const [
-    opened_sendNotification,
-    { open: open_sendNotification, close: close_sendNotification },
-  ] = useDisclosure(false);
 
   const handleDelete = (userId: string) => {
     UserService.deleteUser({ userId }).then(
@@ -139,7 +126,6 @@ export function AllUsers() {
         />
       </td>
       <td>{moment(item.createdAt).utcOffset("+5:30").format("DD-MM-YYYY")}</td>
-      <td>{item.processServices.length}</td>
       <td>
         <Menu
           transitionProps={{ transition: "pop" }}
@@ -158,21 +144,6 @@ export function AllUsers() {
             </Button>
           </Menu.Target>
           <Menu.Dropdown>
-            <Menu.Item
-              onClick={() => {
-                setNotificationUsername(item.username);
-                open_sendNotification();
-              }}
-              icon={<IconMessages size="1rem" stroke={1.5} />}
-            >
-              Send Notification
-            </Menu.Item>
-            <Menu.Item icon={<IconServer size="1rem" stroke={1.5} />}>
-              Add Service
-            </Menu.Item>
-            <Menu.Item icon={<IconProgressCheck size="1rem" stroke={1.5} />}>
-              Pending Services
-            </Menu.Item>
             <Menu.Item
               onClick={() => {
                 handleDelete(item._id);
@@ -202,26 +173,12 @@ export function AllUsers() {
         </Center>
       ) : (
         <ScrollArea>
-          <Modal
-            opened={opened_sendNotification}
-            onClose={close_sendNotification}
-            title={`Send Notification to ${notificationUsername}`}
-            centered
-          >
-            <SendNotificationFragment
-              data={{
-                username: notificationUsername,
-                closeModal: close_sendNotification,
-              }}
-            />
-          </Modal>
           <Table miw={800} verticalSpacing="sm">
             <thead>
               <tr>
                 <th>User</th>
                 <th>Role</th>
                 <th>Created At</th>
-                <th>Process Services</th>
                 <th>Manage</th>
               </tr>
             </thead>

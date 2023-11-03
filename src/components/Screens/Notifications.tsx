@@ -50,19 +50,19 @@ function NotificationsPage() {
   useEffect(() => {
     setIsLoading(true); // Set loading status to true before making the API call
 
-    UserService.getAllNotifications(currentUser.username)
-      .then((response) => {
-        // Process the response data
-        setNotifications(response.data.reverse());
-        setIsLoading(false); // Set loading status to false after the data is fetched
-      })
-      .catch((error) => {
-        if (error.response && error.response.status === 401) {
-          //@ts-ignore
-          EventBus.dispatch("logout");
-        }
-        setIsLoading(false); // Set loading status to false in case of an error
-      });
+    // UserService.getAllNotifications(currentUser.username)
+    //   .then((response) => {
+    //     // Process the response data
+    //     setNotifications(response.data.reverse());
+    //     setIsLoading(false); // Set loading status to false after the data is fetched
+    //   })
+    //   .catch((error) => {
+    //     if (error.response && error.response.status === 401) {
+    //       //@ts-ignore
+    //       EventBus.dispatch("logout");
+    //     }
+    //     setIsLoading(false); // Set loading status to false in case of an error
+    //   });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
