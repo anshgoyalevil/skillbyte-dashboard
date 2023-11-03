@@ -79,6 +79,10 @@ export default function AddService() {
     );
 
   const { user: currentUser } = useSelector((state: any) => state.auth);
+  const batchValues = batches.map((batch) => {
+    return batch.year;
+  });
+  batchValues.push("Open-Source");
 
   if (!currentUser) {
     return <Navigate to="/login" />;
@@ -103,16 +107,14 @@ export default function AddService() {
         {!successful && (
           <form onSubmit={form.onSubmit(handleRegister)} autoComplete="off">
             <Select
-              label="Batch"
+              label="Batch/Type"
               placeholder="Select Batch"
               searchable
               nothingFound="No Batch Found"
               maxDropdownHeight={280}
               {...form.getInputProps("batch")}
               required
-              data={batches.map((batch) => {
-                return batch.year;
-              })}
+              data={batchValues}
             />
             <TextInput
               label="Title"
