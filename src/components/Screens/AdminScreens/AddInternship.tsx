@@ -28,13 +28,11 @@ export default function AddService() {
   useEffect(() => {
     UserService.getAllBatches().then(
       (response) => {
-        console.log(response.data)
         setBatches(response.data);
       },
       (error) => {
         if (error.response && error.response.status === 401) {
           //@ts-ignore
-          EventBus.dispatch("logout");
         }
       }
     );

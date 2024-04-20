@@ -5,7 +5,6 @@ import {
 } from "@mantine/core";
 import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 import Home from "./components/Screens/Home";
-import GSTCalculator from "./components/Screens/GSTCalculator";
 import { Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/Fragments/Navbar/Navbar";
 import { Footer } from "./components/Fragments/Footer/Footer";
@@ -18,20 +17,9 @@ import { Login } from "./components/Screens/Login";
 import { Register } from "./components/Screens/Register";
 import Dashboard from "./components/Screens/Dashboard";
 import DashboardHome from "./components/Screens/DashboardHome";
-import { NotificationsPage } from "./components/Screens/Notifications";
 import { Notifications } from "@mantine/notifications";
-import Profile from "./components/Screens/Profile";
 import { EmptyPage } from "./components/Screens/EmptyPage";
-import AllServices from "./components/Screens/AllServices";
-import ServiceStatus from "./components/Screens/ServiceStatus";
-import { AllUsers } from "./components/Screens/AdminScreens/AllUsers";
-import { AddUser } from "./components/Screens/AdminScreens/AddUser";
-import { ManageServices } from "./components/Screens/AdminScreens/ManageServices";
 import AddInternship from "./components/Screens/AdminScreens/AddInternship";
-import { TrackService } from "./components/Screens/AdminScreens/TrackService";
-import { ChangePassword } from "./components/Screens/ChangePassword";
-import { ManageServicesMod } from "./components/Screens/ModeratorScreens/ManageServicesMod";
-import { TrackServiceMod } from "./components/Screens/ModeratorScreens/TrackServiceMod";
 import { AddBatch } from "./components/Screens/AdminScreens/AddBatch";
 
 export default function App() {
@@ -65,7 +53,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route index element={<Home />} />
-          <Route path="gst-calculator" element={<GSTCalculator />} />
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="our-process" element={<OurProcess />} />
           <Route path="our-services" element={<OurServices />} />
@@ -74,25 +61,8 @@ export default function App() {
           <Route path="*" element={<EmptyPage />} />
           <Route path="dashboard" element={<Dashboard />}>
             <Route path="home" element={<DashboardHome />} />
-            <Route path="notifications" element={<NotificationsPage />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="allservices" element={<AllServices />} />
-            <Route path="changepassword" element={<ChangePassword />} />
-            <Route path="servicestatus" element={<ServiceStatus />}>
-              <Route path="*" element={<ServiceStatus />} />
-            </Route>
-            <Route path="mod/manageservices" element={<ManageServicesMod />} />
-            <Route path="mod/track" element={<TrackServiceMod />}>
-              <Route path="*" element={<TrackServiceMod />} />
-            </Route>
-            <Route path="allusers" element={<AllUsers />}></Route>
-            <Route path="adduser" element={<AddUser />}></Route>
             <Route path="addbatch" element={<AddBatch />}></Route>
-            <Route path="manageservices" element={<ManageServices />}></Route>
             <Route path="add-internship" element={<AddInternship />}></Route>
-            <Route path="track" element={<TrackService />}>
-              <Route path="*" element={<TrackService />} />
-            </Route>
           </Route>
         </Routes>
         {window.location.pathname.toLowerCase().includes("dashboard") ? (
